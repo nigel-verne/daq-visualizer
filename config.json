@@ -1,0 +1,140 @@
+{
+    "system": "AST2",
+    "com_port": "COM8",
+    "baud_rate": 115200,
+    "serial_update_rate_sec": 0.01,
+    "database_update_rate_sec": 1.0,
+    "database_filename": "database_file.db",
+    "log_filename": "log_file.log",
+    "graph_update_interval_ms": 125,
+    "graph_display_duration_sec": 10,
+    "AST2": {
+        "sensor_labels": [
+            "Timestamp",
+            "PT_711",
+            "PT_712",
+            "PT_AVERAGE",
+            "TT_711",
+            "TT_712",
+            "TT_741",
+            "TT_742",
+            "TT_743",
+            "TT_744",
+            "TT_791",
+            "TT_792",
+            "TT_793",
+            "VG_782",
+            "solenoid",
+            "parker_hanbay",
+            "dragon_hanbay",
+            "venting_enabled",
+            "vent_rate",
+            "desired_hydrogen",
+            "actual_hydrogen"
+        ],
+        "controls_layout": [
+            {
+                "type": "checkbox",
+                "id": "solenoid-valve",
+                "label": "Solenoid"
+            },
+            {
+                "type": "input",
+                "id": "parker-hanbay-valve",
+                "label": "(Manual) Parker Valve",
+                "min": 0,
+                "max": 100
+            },
+            {
+                "type": "input",
+                "id": "dragon-hanbay-valve",
+                "label": "(Manual) Dragon Valve",
+                "min": 0,
+                "max": 100
+            },
+            {
+                "type": "checkbox",
+                "id": "venting-enabled",
+                "label": "Controlled Vent"
+            },
+            {
+                "type": "input",
+                "id": "vent-rate",
+                "label": "Controlled Vent Rate (kg/hr)",
+                "min": 0,
+                "max": 100
+            }
+        ],
+        "graph_layout": [
+            {
+                "title": "System Controls",
+                "x_axis_title": "Time",
+                "y_axis_title": "Valve State",
+                "traces": [
+                    "solenoid",
+                    "parker_hanbay",
+                    "dragon_hanbay",
+                    "venting_enabled",
+                    "vent_rate"
+                ]
+            },
+            {
+                "title": "Hydrogen Storage",
+                "x_axis_title": "Time",
+                "y_axis_title": "Mass (kg)",
+                "traces": [
+                    "desired_hydrogen",
+                    "actual_hydrogen"
+                ]
+            },
+            {
+                "title": "Pressure",
+                "x_axis_title": "Time",
+                "y_axis_title": "Pressure (Bar)",
+                "traces": [
+                    "PT_711",
+                    "PT_712",
+                    "PT_AVERAGE"
+                ]
+            },
+            {
+                "title": "Tubing Temperatures",
+                "x_axis_title": "Time",
+                "y_axis_title": "Temperature (K)",
+                "traces": [
+                    "TT_711",
+                    "TT_712"
+                ]
+            },
+            {
+                "title": "Storage Temperatures",
+                "x_axis_title": "Time",
+                "y_axis_title": "Temperature (K)",
+                "traces": [
+                    "TT_741",
+                    "TT_742",
+                    "TT_743",
+                    "TT_744"
+                ]
+            },
+            {
+                "title": "Vent Temperatures",
+                "x_axis_title": "Time",
+                "y_axis_title": "Temperature (K)",
+                "traces": [
+                    "TT_791",
+                    "TT_792",
+                    "TT_793"
+                ]
+            },
+            {
+                "title": "Vacuum Pressure",
+                "x_axis_title": "Time",
+                "y_axis_title": "Vaccum Pressure (mTorr)",
+                "traces": [
+                    "VG_782"
+                ]
+            }
+        ]
+    }
+}
